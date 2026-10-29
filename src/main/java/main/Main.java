@@ -1,17 +1,21 @@
-
-import java.nio.file.FileSystemNotFoundException;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package main;
+
+//ini hanya uji coba saja dulu yawww
+import model.Product;
+
 /**
  *
  * @author acer_
  */
-public class HalloAsprak {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hallo Asprak, cuman pengen tahu anda melihat ini atau tidak");
+        for (Product p : Product.getAllProducts()) {
+            System.out.println(p.getId() + "| Nama Produk: " + p.getName() + " | hargane: " + p.getPrice());
+        }
     }
 }
