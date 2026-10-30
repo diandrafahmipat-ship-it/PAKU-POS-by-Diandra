@@ -8,6 +8,9 @@ package model;
  *
  * @author acer_
  */
-public class IPayment {
+public interface IPayment {
 
+    boolean pay(double totalAmount);
+
+    String getMethodName();
 }
