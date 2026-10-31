@@ -52,7 +52,7 @@ public class CartService {
         }
     }
 
-    public List<CartItem> geItems() {
+    public List<CartItem> getItems() {
         return items;
     }
 

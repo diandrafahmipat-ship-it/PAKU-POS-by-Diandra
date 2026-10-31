@@ -8,6 +8,9 @@ package main;
 import model.Product;
 import model.CartItem;
 import model.Transaction;
+import model.IPayment;
+import service.CartService;
+import service.PaymentProcessor;
 import java.util.List;
 import java.util.Scanner;
 
@@ -78,6 +81,53 @@ public class Main {
                     System.out.println(t.getId() + " | " + t.getTransactionTime() + " | " + t.getItemsDetil() + " | " + t.getPaymentMethod() + " | " + t.getTotalPrice());
                 }
             }
+
+            CartService cartService = new CartService();
+            cartService.addProduct(martabakManis);
+            cartService.addProduct(martabakManis);
+            if (daftarMenuMartabak.size() > 1) {
+                cartService.addProduct(daftarMenuMartabak.get(1));
+            }
+
+            System.out.println("\nIsi Keranjang setelah addProduct:");
+            for (CartItem ci : cartService.getItems()) {
+                System.out.println(ci.getProduct().getName() + " | Qty: " + ci.getQuantity() + " | Subtotal: " + ci.getSubTotal());
+            }
+            System.out.println("Format Detail Keranjang: " + cartService.getItemFormatDetail());
+            System.out.println("Total Harga Keranjang: " + cartService.getTotalPrice());
+
+            cartService.removeProduct(martabakManis);
+            System.out.println("\nIsi Keranjang setelah removeProduct 1x:");
+            System.out.println("Format Detail Keranjang: " + cartService.getItemFormatDetail());
+            System.out.println("Total Harga Keranjang: " + cartService.getTotalPrice());
+
+            PaymentProcessor processor = new PaymentProcessor();
+            IPayment metodeQris = new IPayment() {
+                @Override
+                public boolean pay(double totalAmount) {
+                    return true;
+                }
+
+                @Override
+                public String getMethodName() {
+                    return "QRIS";
+                }
+            };
+
+            boolean statusBayar = processor.processTransaction(
+                    "2026-10-31 14:45",
+                    cartService.getItemFormatDetail(),
+                    cartService.getTotalPrice(),
+                    metodeQris
+            );
+
+            System.out.println("\nStatus Proses Pembayaran via PaymentProcessor: " + statusBayar);
+            for (Transaction t : Transaction.getAllTransaction()) {
+                System.out.println(t.getId() + " | " + t.getTransactionTime() + " | " + t.getItemsDetil() + " | " + t.getPaymentMethod() + " | " + t.getTotalPrice());
+            }
+
+            cartService.clearCart();
+            System.out.println("\nJumlah item di keranjang setelah clearCart: " + cartService.getItems().size());
         }
     }
 
