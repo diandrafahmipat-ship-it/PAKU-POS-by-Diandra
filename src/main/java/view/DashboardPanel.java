@@ -26,18 +26,52 @@ public class DashboardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnRiwayatPenjualan = new javax.swing.JButton();
+        btnCatatPenjualan = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(393, 852));
         setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/DashboardPNG.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        btnRiwayatPenjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/btn_riwayat.png"))); // NOI18N
+        btnRiwayatPenjualan.setBorderPainted(false);
+        btnRiwayatPenjualan.setContentAreaFilled(false);
+        btnRiwayatPenjualan.setFocusPainted(false);
+        btnRiwayatPenjualan.setPreferredSize(new java.awt.Dimension(200, 30));
+        add(btnRiwayatPenjualan);
+        btnRiwayatPenjualan.setBounds(30, 590, 330, 170);
+
+        btnCatatPenjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/btn_catat.png"))); // NOI18N
+        btnCatatPenjualan.setBorderPainted(false);
+        btnCatatPenjualan.setContentAreaFilled(false);
+        btnCatatPenjualan.setFocusPainted(false);
+        btnCatatPenjualan.setPreferredSize(new java.awt.Dimension(200, 30));
+        btnCatatPenjualan.addActionListener(this::btnCatatPenjualanActionPerformed);
+        add(btnCatatPenjualan);
+        btnCatatPenjualan.setBounds(30, 410, 330, 170);
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 19)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Menu Cepat");
+        jLabel2.setPreferredSize(new java.awt.Dimension(200, 30));
+        add(jLabel2);
+        jLabel2.setBounds(40, 340, 160, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/header_dashboard.png"))); // NOI18N
+        jLabel1.setText("Menu Cepat");
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 400, 850);
+        jLabel1.setBounds(0, 0, 393, 852);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCatatPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatatPenjualanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCatatPenjualanActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCatatPenjualan;
+    public javax.swing.JButton btnRiwayatPenjualan;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
