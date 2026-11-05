@@ -26,10 +26,58 @@ public class RiwayatPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBack = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnDeleteMode = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panelListRiwayat = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
         setPreferredSize(new java.awt.Dimension(393, 852));
         setLayout(null);
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/btn_back.png"))); // NOI18N
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addActionListener(this::btnBackActionPerformed);
+        add(btnBack);
+        btnBack.setBounds(40, 65, 47, 50);
+
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/btn_add.png"))); // NOI18N
+        btnAdd.setBorderPainted(false);
+        btnAdd.setContentAreaFilled(false);
+        add(btnAdd);
+        btnAdd.setBounds(285, 40, 42, 42);
+
+        btnDeleteMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/btn_trash.png"))); // NOI18N
+        btnDeleteMode.setBorderPainted(false);
+        btnDeleteMode.setContentAreaFilled(false);
+        add(btnDeleteMode);
+        btnDeleteMode.setBounds(335, 40, 42, 42);
+
+        panelListRiwayat.setBackground(new java.awt.Color(255, 255, 255));
+        panelListRiwayat.setLayout(new javax.swing.BoxLayout(panelListRiwayat, javax.swing.BoxLayout.Y_AXIS));
+        jScrollPane1.setViewportView(panelListRiwayat);
+
+        add(jScrollPane1);
+        jScrollPane1.setBounds(24, 140, 345, 680);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/header_riwayat.png"))); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 393, 852);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAdd;
+    public javax.swing.JButton btnBack;
+    public javax.swing.JButton btnDeleteMode;
+    private javax.swing.JLabel jLabel1;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JPanel panelListRiwayat;
     // End of variables declaration//GEN-END:variables
 }
